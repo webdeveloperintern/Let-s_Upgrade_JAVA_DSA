@@ -1,5 +1,6 @@
 import java.util.*;
-public class Main {
+
+public class difference {
   public static void main(String[] args) {
     int []arr={7,9,5,6,3,2};
     Arrays.sort(arr);
