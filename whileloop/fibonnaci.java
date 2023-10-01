@@ -3,7 +3,7 @@ package whileloop;
 
 import java.util.Scanner;
 
-public class fibonacci {
+public class fibonnaci {
     public static void main(String[] args) {
         System.out.println("ENter the number : ");
         Scanner sc = new Scanner(System.in);
