@@ -13,10 +13,11 @@ public class Amstrongnumber {
             int reminder = Nnumber % 10;
             ndigits++;
             Nnumber /=10;
+            // System.out.println(reminder);
         }
         while(number != 0){
-            int reminder = number % 10;
-            int temp =(int) Math.pow(reminder,ndigits);
+            int reminderr = number % 10;
+            int temp =(int) Math.pow(reminderr,ndigits);
             result +=temp;
             number/=10;
         }
