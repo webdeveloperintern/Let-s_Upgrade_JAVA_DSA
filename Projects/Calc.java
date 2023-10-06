@@ -8,7 +8,7 @@ public class Calc {
     public static void main(String[] args) {
         System.out.println("**************** Welcome to my Calculator ***************");
         System.out.println("\n\n \t\t Enter input seperated by space \n\n");
-        System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t e Clear Console\t 0  _ 0 or _ 0 for History of calculations");
+        System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t e Clear Console\t h for History of calculations");
         System.out.println("\n Enter the inputs and get Results \n");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number : ");
@@ -27,13 +27,14 @@ public class Calc {
         double number1 = d;
         System.out.print("Enter the operator : ");
         char operand = sc.next().charAt(0);
-        System.out.print("Enter the number : ");
-        int number2 = sc.nextInt();
-        if(number1 == 0|| number2 == 0 && operand == '_'){
-            calculator('_', 0, 0);
+        if(operand == 'h')
+        {
+            calculator(operand, 0, 0);
         }
         else{
-        calculator(operand,(int) number1 , number2);
+            System.out.print("Enter the number : ");
+            int number2 = sc.nextInt();
+            calculator(operand,(int) number1 , number2);
         }
         sc.close();
     }
@@ -69,7 +70,7 @@ public class Calc {
                  StoreHistory(n1,operand,n2,modulo(n1,n2));
                 inputs(divide(n1, n2));
                 break;
-            case '_':
+            case 'h':
                 // System.out.println("Underscore switch case entered.");
                 displayHistory();
                 break;
@@ -91,8 +92,8 @@ public class Calc {
             System.out.println(history[i][0] + " " + (char)history[i][1] + " " + history[i][2] + " = "+ history[i][3]);
         }
         System.out.println("****************** End of History ******************");
-        System.out.println("\033[H\033[2J");
-        main(null);
+        // System.out.println("\033[H\033[2J");
+        // main(null);
     }
     //store-History
     public static void StoreHistory(double n1,char operand,int n2,double Results){
