@@ -8,7 +8,7 @@ public class Calc {
     public static void main(String[] args) {
         System.out.println("**************** Welcome to my Calculator ***************");
         System.out.println("\n\n \t\t Enter input seperated by space \n\n");
-        System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t e Clear Console\t h for History of calculations");
+        System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t c Clear Console\t h for History of calculations\n\n\t x to exit");
         System.out.println("\n Enter the inputs and get Results \n");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number : ");
@@ -27,7 +27,7 @@ public class Calc {
         double number1 = d;
         System.out.print("Enter the operator : ");
         char operand = sc.next().charAt(0);
-        if(operand == 'h')
+        if(operand == 'h'|| operand == 'e' || operand == 'x' || operand == 'H'|| operand == 'E' || operand == 'X')
         {
             calculator(operand, 0, 0);
         }
@@ -70,30 +70,56 @@ public class Calc {
                  StoreHistory(n1,operand,n2,modulo(n1,n2));
                 inputs(divide(n1, n2));
                 break;
+            case '~':
+                System.out.println(" = "+SquareRoot(n2));
+                break;
             case 'h':
+            case 'H':
                 // System.out.println("Underscore switch case entered.");
                 displayHistory();
+                inputs(n1);
                 break;
-            case 'e':
+            case 'c':
+            case 'C':
                 System.out.println("\033[H\033[2J");
                 main(null);
                 break;
+            case '^':
+                System.out.println(" = "+ power(n1, n2));
+                break;
+            case 'x':
+            case 'X':
+                System.out.println("\033[H\033[2J");
+                main(null);
+                break;
+            case 'e':
+            case 'E':
+                System.out.print("Do you really want to terminate the opartion : (y/n) ");
+                Scanner sc = new Scanner(System.in);
+                sc.nextLine();
+                String ans = sc.nextLine();
+                if(ans.equalsIgnoreCase("Y") || ans.equalsIgnoreCase("N")){
+                System.out.println("\033[H\033[2J");
+                System.out.println("Thank You 0 <");
+                }
+                main(null);
+                break;
+
             default:
                 System.out.println("Enter the valid operand ---");
-                inputs(operand);
+                inputs(n1);
                 break;
         }
             
     }
     //History-display
     public static void displayHistory(){
-        System.out.println("****************** History ******************");
+        System.out.println("\n\n****************** History ******************");
         for (int i = 0; i < historyIndex-1; i++) {
             System.out.println(history[i][0] + " " + (char)history[i][1] + " " + history[i][2] + " = "+ history[i][3]);
         }
-        System.out.println("****************** End of History ******************");
-        // System.out.println("\033[H\033[2J");
-        // main(null);
+        System.out.println("****************** End of History ******************\n\n");
+        
     }
     //store-History
     public static void StoreHistory(double n1,char operand,int n2,double Results){
@@ -136,5 +162,15 @@ public class Calc {
         if(a==0) return 0;
         double c = a/b;
         return c;
+    }
+
+    //Power
+    public static double power(double a,int b){
+        return (int)a^b;
+    }
+
+    //Square
+    public static double SquareRoot(double a){
+        return Math.sqrt(a);
     }
 }
