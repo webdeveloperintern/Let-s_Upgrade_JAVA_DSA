@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 class Main{
-     static String remVowel(String str) 
+     static String removeVowel(String str) 
     { 
          return str.replaceAll("[aeiouAEIOU]", ""); 
     } 
@@ -13,6 +13,6 @@ class Main{
         Scanner sc = new Scanner(System.in);
         System.out.print("enter the String : ");
         String word = sc.nextLine();
-        System.out.println("The Result is : "+remVowel(word)); 
+        System.out.println("The Result is : "+removeVowel(word)); 
     } 
 }
