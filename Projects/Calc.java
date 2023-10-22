@@ -8,7 +8,11 @@ public class Calc {
     public static void main(String[] args) {
         System.out.println("**************** Welcome to my Calculator ***************");
         System.out.println("\n\n \t\t Enter input seperated by space \n\n");
+<<<<<<< HEAD
         System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t c Clear Console\t h for History of calculations\n\n\t x to exit");
+=======
+        System.out.println("\n \t Catalogue:(Use Symbols for Operations)\n\n \t*************************************** \n\n \t+ add\t- subracttion\t * Multiplication\n \n\t/ Division\t% modulo\t^ ToPower\t \n\n\t~ SquareRoot\t e Clear Console\t 0 _ 0 or _ 0 for History of calculations");
+>>>>>>> d471a2d54194058e94b3c0cd545f4316fd796707
         System.out.println("\n Enter the inputs and get Results \n");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number : ");
