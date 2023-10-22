@@ -57,7 +57,7 @@ public class Practice {
 		double radius = sc.nextDouble();
 		double area =PI*(radius*radius);
 		System.out.println("\n Area of Circle = "+ area);
-//		sc.close();
+		sc.close();
 	}
 	
 	static void Triangle() {
@@ -69,7 +69,7 @@ public class Practice {
 		int B = sc.nextInt();
 		int hypotenuse = (A*A)+(B*B);
 		System.out.println("\n hypotenuse = "+Math.sqrt(hypotenuse));
-//		sc.close();
+		sc.close();
 	}
 	
 	static void Temprature(int celcius) {
